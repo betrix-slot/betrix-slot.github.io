@@ -30,7 +30,21 @@ p{margin:0 0 1.05em}
 .go-lg{font-size:16px;padding:15px 34px}
 
 /* ── 置中首屏＋大幅介面面板 ── */
-.hero{text-align:center;max-width:1180px;margin:0 auto;padding:78px 44px 0}
+/* 首屏背景：柔和徑向漸層 ＋ 老虎機符號散落兩側。符號係真圖（同一套 Fluent 圖示），
+   唔係純色頂替；中間刻意留空，唔會蓋到標題同副標。 */
+.hero{position:relative;overflow:hidden;text-align:center;padding:78px 0 0;
+  background:radial-gradient(88% 104% at 50% -20%, #f7ecf8 0%, #fdfafe 46%, #fff 72%)}
+.hero-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 44px}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;user-select:none}
+.bs{position:absolute;opacity:.17}
+.bs-1{left:4%;top:11%;width:78px;transform:rotate(-14deg)}
+.bs-2{left:13%;top:50%;width:58px;transform:rotate(10deg)}
+.bs-3{left:3%;top:75%;width:64px;transform:rotate(6deg)}
+.bs-4{right:6%;top:15%;width:72px;transform:rotate(12deg)}
+.bs-5{right:14%;top:47%;width:60px;transform:rotate(-9deg)}
+.bs-6{right:3%;top:73%;width:66px;transform:rotate(15deg)}
+.bs-7{left:23%;top:5%;width:46px;transform:rotate(-7deg)}
+.bs-8{right:25%;top:7%;width:50px;transform:rotate(9deg)}
 .hero h1{font-size:clamp(40px,5.2vw,70px)}
 .sub{margin:24px auto 30px;font-size:17.5px;color:#5b5364;max-width:46ch}
 .hero-btns{margin-bottom:56px}
@@ -154,7 +168,13 @@ p{margin:0 0 1.05em}
   display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#7d6d83}
 
 @media(max-width:980px){
-  .hero{padding:54px 24px 0}
+  .hero{padding:54px 0 0}
+  .hero-in{padding:0 24px}
+  /* 375px 下標題佔咗大部分闊度，貼住標題高度嗰幾個符號會壓到字，收起佢哋，
+     淨返下半部四個（實測 overlappingText = 0）。 */
+  .bs{opacity:.13}
+  .bs-2{width:40px}.bs-3{width:44px}.bs-5{width:42px}.bs-6{width:46px}
+  .bs-1,.bs-4,.bs-7,.bs-8{display:none}
   .dark-in,.alt{grid-template-columns:1fr;gap:32px}
   .alt-vis{padding:38px}
   .cd-row{grid-template-columns:1fr}
