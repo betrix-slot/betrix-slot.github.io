@@ -103,6 +103,7 @@ p{margin:0 0 1.05em}
 .alt-vis{background:#faf7fb;border:1px solid #eadcec;border-radius:20px;
   padding:52px;display:flex;align-items:center;justify-content:center}
 .alt-vis img{width:min(240px,64%);height:auto}
+.alt-vis .illu{width:100%;max-width:360px}
 
 /* ── 四欄統計 ── */
 .stats{max-width:1180px;margin:0 auto;padding:0 44px 96px}
