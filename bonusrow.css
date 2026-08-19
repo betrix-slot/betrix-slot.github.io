@@ -37,14 +37,22 @@ p{margin:0 0 1.05em}
 .hero-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 44px}
 .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;user-select:none}
 .bs{position:absolute;opacity:.17}
-.bs-1{left:4%;top:11%;width:78px;transform:rotate(-14deg)}
-.bs-2{left:13%;top:50%;width:58px;transform:rotate(10deg)}
-.bs-3{left:3%;top:75%;width:64px;transform:rotate(6deg)}
-.bs-4{right:6%;top:15%;width:72px;transform:rotate(12deg)}
-.bs-5{right:14%;top:47%;width:60px;transform:rotate(-9deg)}
-.bs-6{right:3%;top:73%;width:66px;transform:rotate(15deg)}
-.bs-7{left:23%;top:5%;width:46px;transform:rotate(-7deg)}
-.bs-8{right:25%;top:7%;width:50px;transform:rotate(9deg)}
+/* 左半 */
+.bs-1{left:4%;top:10%;width:74px;transform:rotate(-14deg)}
+.bs-2{left:13%;top:48%;width:56px;transform:rotate(10deg)}
+.bs-3{left:3%;top:74%;width:62px;transform:rotate(6deg)}
+.bs-7{left:22%;top:5%;width:44px;transform:rotate(-7deg)}
+.bs-9{left:9%;top:32%;width:46px;transform:rotate(16deg)}
+.bs-10{left:7%;top:61%;width:50px;transform:rotate(-11deg)}
+.bs-13{left:1%;top:88%;width:44px;transform:rotate(8deg)}
+/* 右半 */
+.bs-4{right:5%;top:13%;width:70px;transform:rotate(12deg)}
+.bs-5{right:14%;top:45%;width:58px;transform:rotate(-9deg)}
+.bs-6{right:3%;top:72%;width:64px;transform:rotate(15deg)}
+.bs-8{right:24%;top:6%;width:46px;transform:rotate(9deg)}
+.bs-11{right:9%;top:30%;width:48px;transform:rotate(-13deg)}
+.bs-12{right:8%;top:58%;width:44px;transform:rotate(7deg)}
+.bs-14{right:1%;top:89%;width:46px;transform:rotate(-6deg)}
 .hero h1{font-size:clamp(40px,5.2vw,70px)}
 .sub{margin:24px auto 30px;font-size:17.5px;color:#5b5364;max-width:46ch}
 .hero-btns{margin-bottom:56px}
@@ -170,11 +178,12 @@ p{margin:0 0 1.05em}
 @media(max-width:980px){
   .hero{padding:54px 0 0}
   .hero-in{padding:0 24px}
-  /* 375px 下標題佔咗大部分闊度，貼住標題高度嗰幾個符號會壓到字，收起佢哋，
-     淨返下半部四個（實測 overlappingText = 0）。 */
+  /* 375px 下標題佔咗大部分闊度，貼住文字高度嗰幾個符號會壓到字，收起佢哋，
+     淨返貼邊嗰六個（實測 overlappingText = 0）。 */
   .bs{opacity:.13}
-  .bs-2{width:40px}.bs-3{width:44px}.bs-5{width:42px}.bs-6{width:46px}
-  .bs-1,.bs-4,.bs-7,.bs-8{display:none}
+  .bs-2{width:38px}.bs-3{width:42px}.bs-5{width:40px}.bs-6{width:44px}
+  .bs-10{width:36px}.bs-12{width:34px}
+  .bs-1,.bs-4,.bs-7,.bs-8,.bs-9,.bs-11,.bs-13,.bs-14{display:none}
   .dark-in,.alt{grid-template-columns:1fr;gap:32px}
   .alt-vis{padding:38px}
   .cd-row{grid-template-columns:1fr}
@@ -187,6 +196,16 @@ p{margin:0 0 1.05em}
   .panel-btm{grid-template-columns:1fr;gap:7px}
 }
 @media(max-width:640px){
+  /* 375px 下真正嘅空隙喺「標題兩側」（標題只佔中間約 120px）同「按鈕兩側」，
+     唔係喺面板高度嗰度——面板幾乎佔滿闊度，擺嗰度會俾佢白底蓋晒。 */
+  .bs{opacity:.16}
+  .bs-1,.bs-4,.bs-7,.bs-8,.bs-9,.bs-11,.bs-13,.bs-14{display:none}
+  .bs-2{display:block;left:2%;top:15%;width:42px;transform:rotate(-12deg)}
+  .bs-5{display:block;right:2%;top:17%;width:40px;transform:rotate(11deg)}
+  .bs-3{display:block;left:3%;top:42%;width:36px;transform:rotate(7deg)}
+  .bs-6{display:block;right:3%;top:44%;width:38px;transform:rotate(-9deg)}
+  .bs-10{display:block;left:1%;top:27%;width:30px;transform:rotate(14deg)}
+  .bs-12{display:block;right:1%;top:29%;width:32px;transform:rotate(-7deg)}
   .hd-nav{display:none}
   .st-row{grid-template-columns:1fr}
   .nx-row{grid-template-columns:1fr}
